@@ -40,3 +40,30 @@ bars.addEventListener("click", ()=>{
         menuFlag--;
     }
 })
+
+const form = document.querySelector("#form");
+let subject = document.querySelector("#subject");
+let body = document.querySelector("#body");
+let messageCase = document.querySelector(".message");
+let submitButton = document.querySelector("#submit");
+submitButton.addEventListener("click", ()=>{
+    messageCase.innerText = "ładowanie";
+})
+      form.addEventListener("submit", (e) => {
+          if(subject.value == "" && body.value == ""){
+              alert("Wszystkie pola formularza muszą być wypełnione!")
+          }
+          else{
+            e.preventDefault();
+            const formData = new FormData(form);
+            fetch("mailer.php", {
+              method: 'post',
+              body: formData
+            })
+            .then(function (text) {
+                subject.value = "";
+                body.value = "";
+                messageCase.innerText = "Wiadomość wysłana";
+            });
+          }
+      })
