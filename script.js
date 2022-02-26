@@ -47,7 +47,9 @@ let body = document.querySelector("#body");
 let messageCase = document.querySelector(".message");
 let submitButton = document.querySelector("#submit");
 submitButton.addEventListener("click", ()=>{
-    messageCase.innerText = "ładowanie";
+    messageCase.innerText = "Wysyłanie";
+    submitButton.style.marginLeft = "9999999999px";
+    submitButton.style.height = "0px";
 })
       form.addEventListener("submit", (e) => {
           if(subject.value == "" && body.value == ""){

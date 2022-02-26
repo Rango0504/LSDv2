@@ -9,8 +9,7 @@
     text-decoration: none;
 }
 nav {
-    background-image: url(imgs/backv.2.png);
-    background-size: contain;
+    background: rgb(0,0,0);background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 47%, rgba(47,47,47,1) 53%, rgba(0,0,0,1) 100%);
     width: 100%;
     position: fixed;
     z-index: 20;
@@ -59,8 +58,7 @@ nav > img {
     width: 26px;
 }
 main {
-    background-image: url(imgs/backv.2.png);
-    background-size: contain;
+    background: rgb(0,0,0);background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 47%, rgba(47,47,47,1) 53%, rgba(0,0,0,1) 100%);
     padding-top: 140px;
 }
 main video {
@@ -126,7 +124,7 @@ p {
     list-style-type: none;
 }
 .cogs li {
-    font-size: 40px;
+    font-size: 35px;
     line-height: 50px;
 }
 #contact {
