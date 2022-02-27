@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
     font-family: 'Lato', sans-serif;
     color: white;
@@ -10,23 +9,24 @@
     text-decoration: none;
 }
 nav {
-    background: rgb(0,0,0);background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 47%, rgba(47,47,47,1) 53%, rgba(0,0,0,1) 100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 40%, rgba(40,40,40,1) 69%);
     width: 100%;
     position: fixed;
     z-index: 20;
 }
 nav a {
-    font-size: 25px;
+    font-size: 20px;
 }
 nav > img {
-    width: 130px;
+    width: 120px;
 }
 .menuComputer {
     display: flex;
     float: right;
     justify-content: space-between;
-    width: 900px;
-    margin: 60px 75px 0 0;
+    width: 850px;
+    margin: 55px 75px 0 0;
 }
 .menuComputer div a{
     margin: 0 10px;
@@ -59,7 +59,8 @@ nav > img {
     width: 26px;
 }
 main {
-    background: rgb(0,0,0);background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 47%, rgba(47,47,47,1) 53%, rgba(0,0,0,1) 100%);
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 40%, rgba(40,40,40,1) 69%);
     padding-top: 140px;
 }
 main video {
@@ -120,13 +121,33 @@ p {
     height: 650px;
     background-size: contain;
 }
-.cogs {
-    margin: 100px 0 0 0;
-    list-style-type: none;
+.check {
+    margin: 80px 0 0 0;
+    list-style-image: url(imgs/check.svg);
 }
-.cogs li {
-    font-size: 35px;
-    line-height: 50px;
+.check li {
+    font-size: 30px;
+    line-height: 45px;
+}
+.check a {
+    font-size: 30px;
+}
+.contactData {
+    margin-top: 55px;
+    margin-left: -26px;
+}
+.contactData .phone, .contactData .envelope {
+    height: 25px;
+}
+.contactData h4 {
+    font-weight: normal;
+    font-size: 30px;
+}
+.fontSize a{
+    font-size: 30px;
+}
+#contactScroll {
+    padding-top: 100px;
 }
 #contact {
     display: flex;
@@ -136,11 +157,41 @@ p {
     color: #11BA0B;
 }
 #form {
-    border: 1px solid white;
+    border: 2px solid white;
     display: flex;
     flex-direction: column;
     padding: 12px;
     width: 400px;
+    border-radius: 10px;
+}
+.formCheck {
+    position: absolute;
+    opacity: 0;
+}
+.formCheckImg {
+    height: 0;
+}
+.imageHeight {
+    height: 400px;
+}
+.formAnimationComplete {
+    animation: formComplete 2s both;
+}
+.formCheckAnimation {
+    animation: formCompleteCheck 2s both;
+    animation-delay: 2s;
+}
+@keyframes formComplete{
+    to {
+        transform: rotate(360deg);
+        opacity: 0%;
+    }
+}
+@keyframes formCompleteCheck{
+    to {
+        opacity: 1;
+        z-index: 10;
+    }
 }
 #form h2 {
     font-size: 40px;
@@ -154,6 +205,7 @@ p {
     margin: 10px 0 20px 0;
     border-radius: 5px;
     padding: 5px;
+    z-index: 100;
 }
 #form input:focus, #form textarea:focus {
     border: 1px solid #11BA0B;
@@ -161,6 +213,9 @@ p {
 }
 #form textarea {
     height: 150px;
+}
+.optional span{
+    font-size: .5em;
 }
 #submit {
     width: 100px;
@@ -186,7 +241,6 @@ p {
     background-attachment: fixed;
     background-size: 100%;
     height: 650px;
-    background-size: contain;
 }
 #gallery .galleryLabels {
     display: flex;
@@ -242,7 +296,7 @@ footer {
 }
 footer span, footer span a{
     text-align: left;
-    font-size: 19px;
+    font-size: 22px;
 }
 footer a {
     color: #11BA0B;
@@ -306,12 +360,23 @@ footer a {
     height: 20px;
     margin: 0 10px 0 0;
 }
-footer .phone {
+.phone {
     margin: 0 10px 0 0;
     height: 20px;
 }
-.phone {
+footer span:nth-child(2) {
+    text-align: right;
+}
+.callToAction .phone {
     height: 35px;
+}
+@media screen and (max-width: 1300px){
+    .callToAction {
+        margin-top: 20%;
+    }
+    #contact {
+        justify-content: center;
+    }
 }
 @media screen and (max-width: 1110px){
     #about, #offer, #contact, #faq {
@@ -365,6 +430,9 @@ footer .phone {
     .social a {
         margin: 0 5px;
     }
+    .check {
+        margin-top: 0px;
+    }
 }
 @media screen and (max-width: 950px) {
     h1 {
@@ -379,12 +447,18 @@ footer .phone {
         margin-top: 10px;
         margin-left: calc(50% - 115px);
     }
-    .phone {
+    .callToAction .phone {
         height: 20px;
     }
     #gallery .galleryLabels {
         width: 100%;
         margin: 40px auto;
+    }
+    .fontSize a, .check li{
+        font-size: 25px;
+    }
+    .contactData .phone, .contactData .envelope {
+        height: 20px;
     }
 }
 @media screen and (max-width: 800px){
@@ -448,12 +522,18 @@ footer .phone {
         font-size: 16px;
     }
     footer span, footer span a{
-        font-size: 10px;
+        font-size: 12px;
     }
     .logo {
         height: 50px;
         width: 50px;
         margin: 18px 0 0 18px;
+    }
+    .phone, .envelope {
+        height: 12px;
+    }
+    .callToAction .phone {
+        height: 15px;
     }
 }
 @media screen and (max-width: 500px) {
@@ -489,6 +569,9 @@ footer .phone {
         height: 150px;
         margin: 30px 0;
     }
+    .check li, .fontSize a {
+        font-size: 20px;
+    }
     #gallery {
         padding: 60px 5px;
     }
@@ -512,8 +595,11 @@ footer .phone {
         margin-left: calc(50% - (120*0.5px));
         padding: 8px;
     }
-    .phone {
+    .callToAction .phone {
         height: 15px;
+    }
+    .phone, .envelope{
+        height: 10px;
     }
     #callToAction {
         padding-top: 80px;
@@ -524,531 +610,14 @@ footer .phone {
     .thirdBackground {
         background-position: -450px;
     }
-=======
-* {
-    font-family: 'Lato', sans-serif;
-    color: white;
-    margin: 0;
-    padding: 0;
-    font-size: 21px;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    text-decoration: none;
-}
-nav {
-    background: rgb(0,0,0);background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 47%, rgba(47,47,47,1) 53%, rgba(0,0,0,1) 100%);
-    width: 100%;
-    position: fixed;
-    z-index: 20;
-}
-nav a {
-    font-size: 25px;
-}
-nav > img {
-    width: 130px;
-}
-.menuComputer {
-    display: flex;
-    float: right;
-    justify-content: space-between;
-    width: 900px;
-    margin: 60px 75px 0 0;
-}
-.menuComputer div a{
-    margin: 0 10px;
-}
-.menuComputer a {
-    transition: .5s;
-    cursor: pointer;
-}
-.menuComputer a:hover {
-    color: #11BA0B;
-}
-.socialImg {
-    transition: .5s;
-}
-.socialImg:hover {
-    filter: invert(52%) sepia(94%) saturate(3701%) hue-rotate(87deg) brightness(108%) contrast(91%);
-}
-.flex {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
-    flex-wrap: wrap;
-
-}
-.menuMobile {
-    display: none;
-}
-#bars {
-    width: 26px;
-}
-main {
-    background: rgb(0,0,0);background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(47,47,47,1) 47%, rgba(47,47,47,1) 53%, rgba(0,0,0,1) 100%);
-    padding-top: 140px;
-}
-main video {
-    display: block;
-    width: 100%;
-}
-.callToAction {
-    position: absolute;
-    width: 100%;
-    margin-top: 30%;
-    text-align: center;
-    z-index: 10;
-}
-h1 {
-    margin: 10px 0;
-    font-size: 60px;
-    text-shadow: 2px 3px black;
-    text-transform: uppercase;
-}
-.callToActionButton {
-    display: block;
-    font-size: 40px;
-    background-color: #11BA0B;
-    width: 300px;
-    margin-top: 60px;
-    margin-left: calc(50% - 0.5*310px);
-    padding: 10px 5px;
-    text-align: center;
-    border-radius: 5px;
-} 
-#about, #offer, #contact, #faq {
-    padding: 100px 200px;
-}
-#gallery {
-    padding: 100px 200px 0 200px;
-}
-h2 {
-    text-align: center;
-    font-size: 50px;
-    margin: 50px 0;
-    text-transform: uppercase;
-}
-h3 {
-    text-align: center;
-    margin-top: -30px;
-    margin-bottom: 50px;
-    font-size: 15px;
-    text-transform: uppercase;
-}
-p {
-    margin: 50px 0;
-    font-size: 25px;
-}
-.firstBackground {
-    background-image: url(imgs/back1.jpg);
-    background-attachment: fixed;
-    background-size: 100%;
-    height: 650px;
-    background-size: contain;
-}
-.cogs {
-    margin: 100px 0 0 0;
-    list-style-type: none;
-}
-.cogs li {
-    font-size: 40px;
-    line-height: 50px;
-}
-#contact {
-    display: flex;
-    justify-content: space-between;
-}
-#contact a {
-    color: #11BA0B;
-}
-#form {
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    padding: 12px;
-    width: 400px;
-}
-#form h2 {
-    font-size: 40px;
-}
-#form h4 {
-    font-weight: normal;
-}
-#form input, #form textarea {
-    background-color: transparent;
-    border: 1px solid white;
-    margin: 10px 0 20px 0;
-    border-radius: 5px;
-    padding: 5px;
-}
-#form input:focus, #form textarea:focus {
-    border: 1px solid #11BA0B;
-    outline: none;
-}
-#form textarea {
-    height: 150px;
-}
-#submit {
-    width: 100px;
-    padding: 10px;
-    background-color: black;
-    align-self: center;
-    border-radius: 5px;
-    transition: .5s;
-}
-#submit:hover {
-    background-color: #11BA0B;
-}
-.offer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#offer img {
-    height: 550px;
-}
-.secondBackground {
-    background-image: url(imgs/back2.jpg);
-    background-attachment: fixed;
-    background-size: 100%;
-    height: 650px;
-    background-size: contain;
-}
-#gallery .galleryLabels {
-    display: flex;
-    justify-content: space-evenly;
-    width: 70%;
-    margin: 50px auto;
-}
-#gallery .galleryLabels a {
-    display: block;
-    width: 170px;
-    text-align: center;
-}
-#gallery .galleryLabels a:hover {
-    border-bottom: 3px solid #11BA0B;
-    margin-bottom: -3px;
-}
-.houseImgs, .clubImgs, .outsideImgs, .weddingImgs, .kidsImgs {
-    display: none;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
-}
-.houseImgs img, .clubImgs img, .outsideImgs img, .weddingImgs img, .kidsImgs img {
-    height: 200px;
-    margin: 20px 10px;
-}
-.flex img {
-    margin: 10px;
-}
-.YT {
-    margin: 15px;
-    border: 1px solid black;
-    height: 315px;
-}
-.thirdBackground {
-    background-image: url(imgs/back3.jpg);
-    background-attachment: fixed;
-    background-size: 100%;
-    height: 650px;
-    background-size: contain;
-}
-#faq p {
-    height: 0;
-    opacity: 0;
-    margin: 0;
-}
-footer {
-    display: flex;
-    padding: 30px;
-    align-items: center;
-    justify-content: space-around;
-    border-top: 3px solid #11BA0B;
-}
-footer span, footer span a{
-    text-align: left;
-    font-size: 19px;
-}
-footer a {
-    color: #11BA0B;
-}
-.faqEl{
-    font-weight: bold;
-    margin-top: 25px;
-    position: relative;
-}
-.answer {
-    font-weight: normal;
-    position: absolute;
-    left: -99999999px;
-    margin-top: 13px;
-}
-.answer a {
-    font-size: inherit;
-    color: #11BA0B;
-}
-#faq ul {
-    list-style-type: none;
-}
-.que {
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-}
-.arrow {
-    width: 10px;
-    transition: .5s;
-    filter: invert(1);
-}
-.que span {
-    transition: .5s;
-}
-.que:hover span{
-    color: #11BA0B;
-}
-.que:hover .arrow{
-    filter: invert(52%) sepia(94%) saturate(3701%) hue-rotate(87deg) brightness(108%) contrast(91%);
-}
-.que:hover .answer span{
-    color: white;
-}
-.que:hover .arrow{
-    transform: rotate(90deg);
-}
-.fieldOpen .answer {
-    position: static;
-}
-.imagesOn {
-    display: flex;
-}
-.borderBottom {
-    border-bottom: 3px solid #11BA0B;
-    margin-bottom: -3px;
-}
-.envelope, .phone{
-    filter: invert(1);
-    height: 20px;
-    margin: 0 10px 0 0;
-}
-footer .phone {
-    margin: 0 10px 0 0;
-    height: 20px;
-}
-.phone {
-    height: 35px;
-}
-@media screen and (max-width: 1110px){
-    #about, #offer, #contact, #faq {
-        padding: 100px 150px;
-    }
-    #contact {
-        flex-direction: column;
-    }
-    #form {
-        align-self: center;
-        margin-top: 50px;
-    }
-    #offer img {
-        height: 300px;
-    }
-    #gallery {
-        padding: 100px 150px 0 150px;
-    }
-    h1 {
-        font-size: 35px;
-    }
-    .callToAction {
-        margin-top: 20%;
-    }
-    .firstBackground, .secondBackground, .thirdBackground{
-        height: 400px;
-        background-size: cover;
-        background-position: center;
-    }
-    .menuComputer {
-        display: none;
-    }
-    .menuMobile {
-        display: flex;
-        float: right;
-        flex-direction: column;
-        align-items: flex-end;
-        margin: 15px;
-    }
-    .menuMobile a {
-        transition: .5s;
-    }
-    .menuMobile a:hover {
-        color: #11BA0B;
-    }
-    .menuLabelsMobile {
-        display: none;
-        flex-direction: column;
-        align-items: inherit;
-    }
-    .social a {
-        margin: 0 5px;
-    }
-}
-@media screen and (max-width: 950px) {
-    h1 {
-        font-size: 25px;
-    }
-    .callToAction {
-        margin-top: 30%;
-    }
-    .callToActionButton {
-        font-size: 25px;
-        width: 200px;
-        margin-top: 10px;
-        margin-left: calc(50% - 115px);
-    }
-    .phone {
-        height: 20px;
-    }
-    #gallery .galleryLabels {
-        width: 100%;
-        margin: 40px auto;
-    }
-}
-@media screen and (max-width: 800px){
-    .callToActionButton {
-        margin-top: 10px;
-    }    
-    .logo {
-        height: 100px;
-        width: 100px;
-    }
-}
-@media screen and (max-width: 750px) {
-    main {
-        padding-top: 110px;
-    }
-    h1 {
-        font-size: 20px;
-        margin: 20px;
-    }
-    h2 {
-        font-size: 28px;
-        margin: 25px auto;
-    }
-    p {
-        font-size: 16px;
-    }
-    .callToAction {
-        margin-top: 20%;
-    }
-    .callToActionButton {
-        font-size: 20px;
-        width: 140px;
-        margin-left: calc(50% - 80px);
-        padding: 10px;
-    }
-    #about, #offer, #contact, #faq, #gallery {
-        padding: 50px 80px;
-    }
-    #offer img {
-        height: 250px;
-    }
-    #gallery .galleryLabels {
-        margin: 30px auto;
-    }
-    .galleryLabels a {
-        font-size: 16px;
-    }
-    .YT iframe {
-        width: 450px;
-    }
-    .cogs {
-        margin: 0;
-    }
-    .cogs li {
-        font-size: 16px;
-    }
-    .que {
-        font-size: 18px;
-    }
-     .answer {
-        font-size: 16px;
-    }
-    footer span, footer span a{
-        font-size: 10px;
-    }
-    .logo {
-        height: 50px;
-        width: 50px;
-        margin: 18px 0 0 18px;
-    }
-}
-@media screen and (max-width: 500px) {
-    main {
-        padding-top: 0px;
-    }
-    h1 {
-        font-size: 15px;
-        margin: 10px;
-    }
-    h2 {
-        margin: 0 0 20px 0;
-    }
-    h3 {
-        margin-top: 0;
-    }
-    #about, #offer, #contact, #faq {
-        padding: 60px 50px;
-    }
-    #form {
-        width: 95%;
-    }
-    #form h2 {
-        font-size: 30px;
-    }
-    #form h4 {
-        font-size: 20px;
-    }
-    .offer {
-        flex-direction: column-reverse;
-    }
-    #offer img {
+    .YT iframe{
+        width: 230px;
         height: 150px;
-        margin: 30px 0;
     }
-    #gallery {
-        padding: 60px 5px;
-    }
-    #gallery img {
-        max-width: 320px;
-        max-height: 180px;
-    }
-    .YT iframe {
-        width: 350px;
-    }
-    .que {
-        font-size: 14px;
-    }
-    main video {
-        width: 100%;
-        margin: 0;
-    }
-    .callToActionButton {
-        font-size: 16px;
-        width: 120px;
-        margin-left: calc(50% - (120*0.5px));
-        padding: 8px;
-    }
-    .phone {
-        height: 15px;
-    }
-    #callToAction {
-        padding-top: 80px;
-    }
-    .cogs li {
-        line-height: 25px;
+    .YT {
+        height: 150px;
     }
     .thirdBackground {
-        background-position: -450px;
+        background-position: 70% 0%;
     }
->>>>>>> 95ee8e38e2af9de3945c8182157f71b9a0c6dc28
 }

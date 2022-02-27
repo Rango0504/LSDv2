@@ -42,14 +42,18 @@ bars.addEventListener("click", ()=>{
 })
 
 const form = document.querySelector("#form");
-let subject = document.querySelector("#subject");
-let body = document.querySelector("#body");
-let messageCase = document.querySelector(".message");
-let submitButton = document.querySelector("#submit");
+const subject = document.querySelector("#subject");
+const body = document.querySelector("#body");
+const telephone = document.querySelector("#telephone")
+const email = document.querySelector("#email");
+const messageCase = document.querySelector(".message");
+const submitButton = document.querySelector("#submit");
+const formCheck = document.querySelector(".formCheck");
+const formCheckImg = document.querySelector(".formCheckImg");
+
 submitButton.addEventListener("click", ()=>{
     messageCase.innerText = "Wysyłanie";
-    submitButton.style.marginLeft = "9999999999px";
-    submitButton.style.height = "0px";
+    formCheckImg.classList.add("imageHeight")
 })
       form.addEventListener("submit", (e) => {
           if(subject.value == "" && body.value == ""){
@@ -65,7 +69,12 @@ submitButton.addEventListener("click", ()=>{
             .then(function (text) {
                 subject.value = "";
                 body.value = "";
-                messageCase.innerText = "Wiadomość wysłana";
+                telephone.value = "";
+                email.value = "";
+                submitButton.style.display = "none";
+                form.classList.add("formAnimationComplete");
+                formCheck.classList.add("formCheckAnimation");
             });
           }
       })
+
