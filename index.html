@@ -22,7 +22,7 @@
         <div class="menuMobile">
             <img src="imgs/bars.svg" height="50px" id="bars">
             <div class="menuLabelsMobile">
-                <a href="#">START</a><a href="#offer">NASZE SŁUCHAWKI</a><a href="#gallery">GALERIA</a><a href="#contactScroll">KONTAKT</a><a href="#faq">FAQ</a><div class="social"><a href="https://www.facebook.com/WherEverYouWantLSD/"><img src="imgs/fb.svg" class="socialImg" height="25px"></a><a href="https://www.instagram.com/lucassilentdisco/"><img src="imgs/instagram.svg" class="socialImg" height="25px"></a><a href="https://www.youtube.com/channel/UCmJUpl2619g66Ul42fhaP9w/videos"><img src="imgs/youtube.svg" class="socialImg" height="25px"></a></div>
+                <a href="#" class="menuLabel">START</a><a href="#offer" class="menuLabel">NASZE SŁUCHAWKI</a><a href="#gallery" class="menuLabel">GALERIA</a><a href="#contactScroll" class="menuLabel">KONTAKT</a><a href="#faq" class="menuLabel">FAQ</a><div class="social"><a href="https://www.facebook.com/WherEverYouWantLSD/"><img src="imgs/fb.svg" class="socialImg" height="25px"></a><a href="https://www.instagram.com/lucassilentdisco/"><img src="imgs/instagram.svg" class="socialImg" height="25px"></a><a href="https://www.youtube.com/channel/UCmJUpl2619g66Ul42fhaP9w/videos"><img src="imgs/youtube.svg" class="socialImg" height="25px"></a></div>
             </div>
         </div>
     </nav>
@@ -130,6 +130,7 @@
                 </ul>
                 <div class="contactData">
                     <span class="fontSize">
+                        <h4>Kontakt:</h4>
                         <a href="mailto:lucassilentdisco@gmail.com"><img src="imgs/envelope.svg" class="envelope">lucassilentdisco@gmail.com</a><br>
                         <a href="tel:665-210-165"><img src="imgs/phone.svg" class="phone">Łukasz: 665-210-165</a><br>
                         <a href="tel:669-365-131"><img src="imgs/phone.svg" class="phone">Tomasz: 669-365-131</a>
@@ -148,13 +149,13 @@
                         <h4>Treść:*</h4>
                         <textarea name="body" id="body"></textarea>
                         <h4>Telefon:</h4>
-                        <input type="tel" name="telephone" id="telephone">
+                        <input type="tel" name="telephone" id="telephone" pattern="[0-9]{9}">
                         <h4>E-mail:*</h4>
                         <input type="email" name="email" id="email">
                         <input type="submit" name="submit" id="submit">
-                        <div class="g-recaptcha" data-sitekey="6LcB1qMeAAAAABSAIaXiCUoQNQ6l-Zglbqp43867"></div>
-                        <input type="hidden" id="captcha" name="captcha" value="">
-                        <div class="essential"><span>Pola z gwiazdką są obowiązkowe*</span></div>
+                        <div class="g-recaptcha" data-callback="captchaOnclick" data-sitekey="6LcB1qMeAAAAABSAIaXiCUoQNQ6l-Zglbqp43867"></div>
+                        <input type="hidden" name="recaptcha" id="recaptchaValidator">
+                        <div class="essential"><span>Pola z gwiazdką są obowiązkowe</span></div>
                         <div class="message"></div>
                 </form>
             </div>
@@ -268,7 +269,6 @@
             </span>
         </footer>
     </main>
-    <script src="jquery-3.6.0.min.js"></script>
     <script src="glightbox.min.js"></script>
     <script src="script.js"></script>
 </body>

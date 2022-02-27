@@ -32,47 +32,23 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = $subject;
+    $mail->Subject = "[WIADOMOSC Z FORMULARZA ZE STRONY LUCAS SILENT DISCO]" . $subject;
     $mail->Body    = $body . "<br>Numer telefonu: " . $telephone . "<br>E-mail: " . $emailAdress;
 
-    $mail->send();
-    echo 'Message has been sent';
+        if (isset($_REQUEST['g-recaptcha-response']) && !empty($_REQUEST['g-recaptcha-response'])) {
+            $secret = '6LcB1qMeAAAAACcIpj5CdFms52JhsB0UK1LrBJnt';
+            $verifyResponse = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=' . $secret . '&response=' . $_REQUEST['g-recaptcha-response']);
+            $responseData = json_decode($verifyResponse);
+    
+            if ($responseData->success) {
+                $mail->send();
+                echo 'Message has been sent';
+            } else {
+                echo 'Robot verification failed, please try again.';
+            }
+        } else {
+            echo 'Please click on the reCAPTCHA box.';
+        }
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-}
-// captcha
-$response = $_POST["g-recaptcha-response"];
-$url = 'https://www.google.com/recaptcha/api/siteverify';
-//validation
-$data = array(
-    'secret' => '6LcB1qMeAAAAACcIpj5CdFms52JhsB0UK1LrBJnt',
-    'response' => $_POST["g-recaptcha-response"]
-);
-
-$options = array(
-    'http' => array (
-        'method' => 'POST',
-        'content' => http_build_query($data)
-    )
-);
-
-$context  = stream_context_create($options);
-$verify = file_get_contents($url, false, $context);
-$captcha_success=json_decode($verify);
-
-if ($captcha_success->success==false) {
-    echo "false";
-} else if ($captcha_success->success==true) {
-    echo "true";
-}
-
-if ($captcha_success->success==false) {
-    echo "Captcha wrong";
-} else if ($captcha_success->success==true) {
-
-if(!$mail->send()) {
-    echo 'Message sent!';
-} else {
-    echo 'Error!';
-}
 }
