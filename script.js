@@ -56,25 +56,26 @@ submitButton.addEventListener("click", ()=>{
     formCheckImg.classList.add("imageHeight")
 })
       form.addEventListener("submit", (e) => {
-          if(subject.value == "" && body.value == ""){
+          if(subject.value == "" && body.value == "" && email.value == ""){
               alert("Wszystkie pola formularza muszą być wypełnione!")
           }
           else{
             e.preventDefault();
-            const formData = new FormData(form);
-            fetch("mailer.php", {
-              method: 'post',
-              body: formData
-            })
-            .then(function (text) {
-                subject.value = "";
-                body.value = "";
-                telephone.value = "";
-                email.value = "";
-                submitButton.style.display = "none";
-                form.classList.add("formAnimationComplete");
-                formCheck.classList.add("formCheckAnimation");
-            });
+            // const formData = new FormData(form);
+            // fetch("mailer.php", {
+            //   method: 'post',
+            //   body: formData
+            // })
+            // .then(function (text) {
+            //     subject.value = "";
+            //     body.value = "";
+            //     telephone.value = "";
+            //     email.value = "";
+            //     submitButton.style.display = "none";
+            //     form.classList.add("formAnimationComplete");
+            //     formCheck.classList.add("formCheckAnimation");
+            // });
+            console.log(grecaptcha);
           }
       })
 

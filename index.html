@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <nav>
@@ -129,7 +130,6 @@
                 </ul>
                 <div class="contactData">
                     <span class="fontSize">
-                        <h4>Kontakt:</h3>
                         <a href="mailto:lucassilentdisco@gmail.com"><img src="imgs/envelope.svg" class="envelope">lucassilentdisco@gmail.com</a><br>
                         <a href="tel:665-210-165"><img src="imgs/phone.svg" class="phone">Łukasz: 665-210-165</a><br>
                         <a href="tel:669-365-131"><img src="imgs/phone.svg" class="phone">Tomasz: 669-365-131</a>
@@ -143,17 +143,18 @@
                 </div>
                 <form id="form" autocomplete="off">
                         <h2>Napisz do nas!</h2>
-                        <h4>Tytuł wiadomości:</h4>
+                        <h4>Tytuł wiadomości:*</h4>
                         <input type="text" name="subject" id="subject">
-                        <h4>Treść:</h4>
+                        <h4>Treść:*</h4>
                         <textarea name="body" id="body"></textarea>
-                        <h4>Telefon:*</h4>
+                        <h4>Telefon:</h4>
                         <input type="tel" name="telephone" id="telephone">
                         <h4>E-mail:*</h4>
                         <input type="email" name="email" id="email">
                         <input type="submit" name="submit" id="submit">
-                        <div class="g-recaptcha" data-sitekey="6Lc5sKMeAAAAABm0zL2oFRYPM3_h-pZyala3b3YJ"></div>
-                        <div class="optional"><span>Pola z gwiazdką są nieobowiązkowe</span></div>
+                        <div class="g-recaptcha" data-sitekey="6LcB1qMeAAAAABSAIaXiCUoQNQ6l-Zglbqp43867"></div>
+                        <input type="hidden" id="captcha" name="captcha" value="">
+                        <div class="essential"><span>Pola z gwiazdką są obowiązkowe*</span></div>
                         <div class="message"></div>
                 </form>
             </div>
@@ -167,15 +168,15 @@
                         <span>Jak to działa - czym jest Silent Disco?</span><img class="arrow" src="imgs/arrow.svg">
                     </div>
                     <div class="answer">
-                        <span>Silent disco to zestaw bezprzewodowych słuchawek do tzw. “cichych dyskotek”, przede wszystkim to nowy wymiar imprezowania. Każdy z uczestników podczas zabawy tanecznej zakłada słuchawki. W Silent Disco drogą radiową nadawana jest muzyka na 3 kanałach. W każdej chwili można wybrać sobie to czego chce się słuchać i to do czego tańczyć. To tak, jakby być na trzech dyskotekach jednocześnie. Świecące diody led pokazują kto jest na jakim kanale. Źródłem muzyki mogą być zarówno konsole Dj’skie, jak i proste urządzenia typu: laptop, smartphone.</span>
+                        <span>Silent Disco to zestaw bezprzewodowych słuchawek do tzw. “cichych dyskotek”, przede wszystkim to nowy wymiar imprezowania. Każdy z uczestników podczas zabawy tanecznej zakłada słuchawki. W Silent Disco drogą radiową nadawana jest muzyka na 3 kanałach. W każdej chwili można wybrać sobie to czego chce się słuchać i to do czego tańczyć. To tak, jakby być na trzech dyskotekach jednocześnie. Świecące diody led pokazują kto jest na jakim kanale. Źródłem muzyki mogą być zarówno konsole Dj’skie, jak i proste urządzenia typu: laptop, smartphone.</span>
                     </div>
                 </li>
                 <li class="faqEl">
                     <div class="que">
-                        <span>Moje pierwsze silent disco – czy dam radę?</span><img class="arrow" src="imgs/arrow.svg">
+                        <span>Moje pierwsze Silent Disco – czy dam radę?</span><img class="arrow" src="imgs/arrow.svg">
                     </div>
                     <div class="answer">
-                        <span>Oczywiście, że tak. Sprzęt jest bardzo prosty w obsłudze. W złożeniu zestawu pomoże minutowy film. Wystarczy podłączyć transmitery do trzech źródeł dźwięku. Może to być laptop, tablet, smartphone, itp. Dostarczamy również odpowiednie okablowanie.</span>
+                        <span>Podłączenie jest bardzo proste, wszystko jest wyjaśnione w <a href="https://www.youtube.com/watch?v=31RQP54qABs">filmie instruktażowym.</a> Obsługa jest intuicyjna. Aby podłączyć sprzęt potrzebne jest wejście tzw. mini-jack. (w przypadku niektórych smartfonów trzeba zaopatrzyć się w przejściówkę (na życzenie dołożymy do zestawu). Należy pamiętać aby nadajniki były ustawione na różnych kanałach.</span>
                     </div>
                 </li>
                 <li class="faqEl">
@@ -191,7 +192,7 @@
                         <span>Gdzie mogę zrobić imprezę?</span><img class="arrow" src="imgs/arrow.svg">
                     </div>
                     <div class="answer">
-                        <span>Absolutnie wszędzie, niekonieczny jest nawet dostęp do sieci 230V, ponieważ możemy dostarczyć nadajniki zasilane bateryjnie. Graliśmy już o zachodzie słońca na greckich plażach czy na statku n aSekwanie. Czytaj więcej w pytaniu "Możliwości…"</span>
+                        <span>Absolutnie wszędzie, niekonieczny jest nawet dostęp do sieci 230V, ponieważ możemy dostarczyć nadajniki zasilane bateryjnie. Graliśmy już o zachodzie słońca na greckich plażach czy na statku na Sekwanie. Czytaj więcej w pytaniu "Możliwości…"</span>
                     </div>
                 </li>
                 <li class="faqEl">
@@ -199,15 +200,7 @@
                         <span>Jak mogę zamówić? Realizacja krok po kroku.</span><img class="arrow" src="imgs/arrow.svg">
                     </div>
                     <div class="answer">
-                        <span>Po nawiązaniu kontaktu (najlepiej mail/telefon) i akceptacji wyceny, sporządzamy prostą umowę najmu (link do wzoru), prosimy o odesłanie skanu podpisanej kopii (via e-mail). Kolejnym krokiem jest przelanie na nasze konto kaucji – zabezpieczenie powierzonego sprzętu. Zestaw Silent Disco wysyłamy kurierem na wskazany adres. Po imprezie zamawiamy kuriera po odbiór spakowanego sprzętu, będzie już miał list przewozowy. Na koniec zwracamy przelewem na konto kaucję, jeśli oczywiście wszystko wraca bez szwanku.</span>
-                    </div>
-                </li>
-                <li class="faqEl">
-                    <div class="que">
-                        <span>Dostawa - jak otrzymam sprzęt?</span><img class="arrow" src="imgs/arrow.svg">
-                    </div>
-                    <div class="answer">
-                        <span>Podłączenie jest bardzo proste, wszystko jest wyjaśnione w <a href="https://www.youtube.com/watch?v=31RQP54qABs">filmie instruktażowym.</a> Obsługa jest intuicyjna. Aby podłączyć sprzęt potrzebne jest wejście tzw. mini-jack. (w przypadku niektórych smartfonów trzeba zaopatrzyć się w przejściówkę (na życzenie dołożymy do zestawu). Należy pamiętać aby nadajniki były ustawione na różnych kanałach.</span>
+                        <span>Po nawiązaniu kontaktu (najlepiej mail/telefon) i akceptacji wyceny, sporządzamy prostą umowę najmu, prosimy o odesłanie skanu podpisanej kopii (via e-mail). Kolejnym krokiem jest przelanie na nasze konto kaucji – zabezpieczenie powierzonego sprzętu. Zestaw Silent Disco wysyłamy kurierem na wskazany adres. Po imprezie zamawiamy kuriera po odbiór spakowanego sprzętu, będzie już miał list przewozowy. Na koniec zwracamy przelewem na konto kaucję, jeśli oczywiście wszystko wraca bez szwanku.</span>
                     </div>
                 </li>
                 <li class="faqEl">
@@ -263,13 +256,13 @@
                         <span>Czy mogę popsuć?</span><img class="arrow" src="imgs/arrow.svg">
                     </div>
                     <div class="answer">
-                        <span>Tak, choć to wymaga dużej i złośliwej determinacji. Słuchawki wytrzymują większość upadków, ale aby je popsuć trzeba się naprawdę postarać. Transmitery lepiej trzymać dalej od rozkręconych imprezowiczów.  Cennik uszkodzeń  i więcej szczegółów zawiera umowa najmu.(link)</span>
+                        <span>Tak, choć to wymaga dużej i złośliwej determinacji. Słuchawki wytrzymują większość upadków, ale aby je popsuć trzeba się naprawdę postarać. Transmitery lepiej trzymać dalej od rozkręconych imprezowiczów.  Cennik uszkodzeń  i więcej szczegółów zawiera umowa najmu.</span>
                     </div>
                 </li>
             </ul>
         </div>
         <footer>
-            <span>Kontakt:<br><a href="mailto:lucassilentdisco@gmail.com"><img src="imgs/envelope.svg" class="envelope">lucassilentdisco@gmail.com</a><br><a href="tel:665-210-165"><img src="imgs/phone.svg" class="phone">Łukasz: 665-210-165</a><br><a href="tel:669-365-131"><img src="imgs/phone.svg" class="phone">Tomasz: 669-365-131</a></span>
+            <span><a href="mailto:lucassilentdisco@gmail.com"><img src="imgs/envelope.svg" class="envelope">lucassilentdisco@gmail.com</a><br><a href="tel:665-210-165"><img src="imgs/phone.svg" class="phone">Łukasz: 665-210-165</a><br><a href="tel:669-365-131"><img src="imgs/phone.svg" class="phone">Tomasz: 669-365-131</a></span>
             <span>
                 Website made by <a href="mailto:m.michal2003@gmail.com">Michał Mikołajczyk</a>
             </span>

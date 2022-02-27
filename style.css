@@ -13,7 +13,7 @@ nav {
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 40%, rgba(40,40,40,1) 69%);
     width: 100%;
     position: fixed;
-    z-index: 20;
+    z-index: 110;
 }
 nav a {
     font-size: 20px;
@@ -214,8 +214,12 @@ p {
 #form textarea {
     height: 150px;
 }
-.optional span{
+.essential span{
     font-size: .5em;
+}
+.g-recaptcha {
+    display: flex;
+    justify-content: center;
 }
 #submit {
     width: 100px;
@@ -406,6 +410,9 @@ footer span:nth-child(2) {
         background-size: cover;
         background-position: center;
     }
+    .thirdBackground {
+        background-position: 60% 0%;
+    }
     .menuComputer {
         display: none;
     }
@@ -550,8 +557,11 @@ footer span:nth-child(2) {
     h3 {
         margin-top: 0;
     }
-    #about, #offer, #contact, #faq {
+    #about, #offer, #faq {
         padding: 60px 50px;
+    }
+    #contact {
+        padding: 10px 50px;
     }
     #form {
         width: 95%;
@@ -619,5 +629,11 @@ footer span:nth-child(2) {
     }
     .thirdBackground {
         background-position: 70% 0%;
+    }
+    footer {
+        flex-direction: column;
+    }
+    footer span {
+        margin-top: 20px;
     }
 }
