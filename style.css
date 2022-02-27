@@ -13,7 +13,7 @@ nav {
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(34,34,34,1) 40%, rgba(40,40,40,1) 69%);
     width: 100%;
     position: fixed;
-    z-index: 20;
+    z-index: 110;
 }
 nav a {
     font-size: 20px;
