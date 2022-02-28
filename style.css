@@ -44,13 +44,17 @@ nav > img {
 .socialImg:hover {
     filter: invert(52%) sepia(94%) saturate(3701%) hue-rotate(87deg) brightness(108%) contrast(91%);
 }
-.flex {
+.flex, .flexStart {
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     justify-content: center;
     flex-wrap: wrap;
-
+}
+.flex {
+    align-items: flex-end;
+}
+.flexStart {
+    align-items: flex-start;
 }
 .menuMobile {
     display: none;
@@ -166,12 +170,13 @@ p {
 .formCheck {
     position: absolute;
     opacity: 0;
-}
-.formCheckImg {
     height: 0;
 }
 .imageHeight {
-    height: 400px;
+    height: 550px;
+}
+.formHeight {
+    height: 550px;
 }
 .formAnimationComplete {
     animation: formComplete 2s both;
@@ -183,11 +188,11 @@ p {
 @keyframes formComplete{
     to {
         transform: rotate(360deg);
-        opacity: 0%;
+        opacity: 0;
     }
 }
 @keyframes formCompleteCheck{
-    to {
+    100% {
         opacity: 1;
         z-index: 10;
     }
@@ -486,6 +491,13 @@ footer span:nth-child(2) {
     h2 {
         font-size: 28px;
         margin: 25px auto;
+    }
+    .formCheck img {
+        height: 200px;
+        margin-top: 10px;
+    }
+    .formHeight, .imageHeight {
+        height: 240px;
     }
     p {
         font-size: 16px;

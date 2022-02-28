@@ -55,19 +55,17 @@ const email = document.querySelector("#email");
 const messageCase = document.querySelector(".message");
 const submitButton = document.querySelector("#submit");
 const formCheck = document.querySelector(".formCheck");
-const formCheckImg = document.querySelector(".formCheckImg");
 
 submitButton.addEventListener("click", ()=>{
     messageCase.innerText = "Wysyłanie";
-    formCheckImg.classList.add("imageHeight")
+    formCheck.classList.add("imageHeight");
 })
-
 function captchaOnclick() {
     document.getElementById('recaptchaValidator').value = grecaptcha.getResponse();
 }
 
       form.addEventListener("submit", (e) => {
-          if(subject.value == "" || body.value == "" || document.getElementById('recaptchaValidator').value == "" || email.value == ""){
+          if(subject.value == "" || body.value == "" || email.value == ""){
             e.preventDefault();            
             alert("Pola formularza z * oraz captcha muszą być wypełnione!");
           }
@@ -79,6 +77,7 @@ function captchaOnclick() {
               body: formData
             })
             .then(function (text) {
+                e.preventDefault();            
                 subject.value = "";
                 body.value = "";
                 telephone.value = "";
@@ -86,6 +85,9 @@ function captchaOnclick() {
                 submitButton.style.display = "none";
                 form.classList.add("formAnimationComplete");
                 formCheck.classList.add("formCheckAnimation");
+                setTimeout(()=>{
+                    form.classList.add("formHeight");
+                }, 2200);
             }).catch(err=>console.log(err));
           }
       })
