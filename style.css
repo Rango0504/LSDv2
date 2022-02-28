@@ -96,7 +96,7 @@ h1 {
     border-radius: 5px;
 } 
 #about, #offer, #contact, #faq {
-    padding: 100px 200px;
+    padding: 120px 200px;
 }
 #gallery {
     padding: 100px 200px 0 200px;
@@ -104,7 +104,7 @@ h1 {
 h2 {
     text-align: center;
     font-size: 50px;
-    margin: 50px 0;
+    margin: 0;
     text-transform: uppercase;
 }
 h3 {
@@ -217,6 +217,9 @@ p {
 }
 #form textarea {
     height: 150px;
+}
+#form h2 {
+    margin: 10px 0;
 }
 .essential span{
     font-size: .5em;
@@ -568,7 +571,7 @@ footer span:nth-child(2) {
         margin-top: 0;
     }
     #about, #offer, #faq {
-        padding: 60px 50px;
+        padding: 90px 50px;
     }
     #contact {
         padding: 10px 50px;
@@ -593,7 +596,7 @@ footer span:nth-child(2) {
         font-size: 20px;
     }
     #gallery {
-        padding: 60px 5px 0 5px;
+        padding: 90px 5px 0 5px;
     }
     #gallery img {
         max-width: 320px;
@@ -635,7 +638,7 @@ footer span:nth-child(2) {
         height: 150px;
     }
     .thirdBackground {
-        background-position: 70% 0%;
+        background-position: 60% 0%;
     }
     footer {
         flex-direction: column;
